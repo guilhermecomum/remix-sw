@@ -11,9 +11,6 @@ import {
   useMatches,
 } from '@remix-run/react'
 
-import Star from './images/star.svg'
-import Wars from './images/wars.svg'
-
 export function links() {
   return [{ rel: 'stylesheet', href: styles }]
 }
@@ -33,19 +30,10 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-black text-white">
-        <div className="container mx-auto">
-          <NavLink to="/">
-            <div>
-              <img src={Star} className="star" alt="logo" />
-              <br />
-              <img src={Wars} className="wars" alt="logo" />
-            </div>
-          </NavLink>
-          <Outlet />
-          <ScrollRestoration />
-          <Scripts />
-          <LiveReload />
-        </div>
+        <Outlet />
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
       </body>
     </html>
   )
