@@ -692,12 +692,6 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-black {
-  --tw-gradient-from: #000;
-  --tw-gradient-to: rgb(0 0 0 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .via-blue-500 {
   --tw-gradient-to: rgb(59 130 246 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #3b82f6, var(--tw-gradient-to);
@@ -705,10 +699,6 @@ video {
 
 .to-pink-500 {
   --tw-gradient-to: #ec4899;
-}
-
-.to-yellow-300 {
-  --tw-gradient-to: #fde047;
 }
 
 .py-4 {

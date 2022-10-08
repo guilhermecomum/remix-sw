@@ -10,6 +10,7 @@ import {
   ScrollRestoration,
   useMatches,
 } from '@remix-run/react'
+import { Progress } from './ui/progress'
 
 export function links() {
   return [{ rel: 'stylesheet', href: styles }]
@@ -30,6 +31,7 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-black text-white">
+        <Progress />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
