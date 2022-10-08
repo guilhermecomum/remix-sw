@@ -3,8 +3,8 @@ import { NavLink, Outlet, useLoaderData } from '@remix-run/react'
 import { getList, getResources } from '~/sw.server'
 import { Container, Grid, Dimmer, Loader } from 'semantic-ui-react'
 import { Film } from '~/types'
-import Star from '~/images/star.svg'
-import Wars from '~/images/wars.svg'
+import Star from '~/assets/star.svg'
+import Wars from '~/assets/wars.svg'
 
 type LoaderData = { films: Film }
 

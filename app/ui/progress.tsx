@@ -2,12 +2,15 @@ import type { ReactElement } from 'react'
 import type { ReactElement, MutableRefObject } from 'react'
 import { useEffect, useRef } from 'react'
 import { useTransition } from '@remix-run/react'
+import useSound from 'use-sound'
+
+import r2d2 from '~/assets/r2d2.mp3'
 
 export function useProgress(): MutableRefObject<HTMLElement> {
   const { location } = useTransition()
   const timeout = useRef<NodeJS.Timeout>()
   const el = useRef<HTMLElement>()
-
+  const [play, { stop }] = useSound(r2d2, { volume: 0.5 })
   useEffect(() => {
     if (!location || !el.current) {
       return
@@ -18,7 +21,7 @@ export function useProgress(): MutableRefObject<HTMLElement> {
     }
 
     el.current.style.width = `0%`
-
+    play()
     let updateWidth = (ms: number) => {
       timeout.current = setTimeout(() => {
         let width = parseFloat(el.current.style.width)
@@ -38,7 +41,7 @@ export function useProgress(): MutableRefObject<HTMLElement> {
       if (el.current.style.width === `0%`) {
         return
       }
-
+      stop()
       el.current.style.width = `100%`
       timeout.current = setTimeout(() => {
         if (el.current?.style.width !== '100%') {
